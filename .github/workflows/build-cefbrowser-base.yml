@@ -36,4 +36,4 @@ jobs:
           context: "{{defaultContext}}:cefbrowser-base-docker"
           push: true
           build-args: amd64
-          tags: Zabrimus/cefbrowser:${TAG}-amd64
+          tags: cefbrowser-base:${TAG}-amd64
