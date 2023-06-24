@@ -2,6 +2,7 @@ name: Build cefbrowser base
 
 env:
   TAG: "1.0"
+  IMAGE_NAME: "cefbrowser-base"
 
 on:
   workflow_dispatch
@@ -33,7 +34,8 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
-          context: "{{defaultContext}}:cefbrowser-base-docker"
+          context: "{{defaultContext}}:${{ env.IMAGE_NAME }}-docker"
           push: true
           build-args: amd64
-          tags: cefbrowser-base:${TAG}-amd64
+          tags: ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:${{ env.TAG }}-amd64
+
