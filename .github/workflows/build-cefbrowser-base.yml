@@ -1,7 +1,7 @@
 name: Build cefbrowser base
 
 env:
-  TAG: 1.0
+  TAG: "1.0"
 
 on:
   workflow_dispatch
@@ -30,18 +30,18 @@ jobs:
         run: |
           cd cefbrowser-base-docker 
           
-          docker build -t Zabrimus/cefbrowser-base:${TAG}-amd64 --build-arg ARCH=amd64/ . 
-          docker push ghcr.io/Zabrimus/cefbrowser-base:${TAG}-amd64
+          docker build -t zabrimus/cefbrowser-base:${TAG}-amd64 --build-arg ARCH=amd64/ . 
+          docker push ghcr.io/zabrimus/cefbrowser-base:${TAG}-amd64
           
-          docker build -t Zabrimus/cefbrowser-base:${TAG}-arm32v7 --build-arg ARCH=arm32v7/ .
-          docker push ghcr.io/Zabrimus/cefbrowser-base:${TAG}-arm32v7
+          docker build -t zabrimus/cefbrowser-base:${TAG}-arm32v7 --build-arg ARCH=arm32v7/ .
+          docker push ghcr.io/zabrimus/cefbrowser-base:${TAG}-arm32v7
           
-          docker build -t Zabrimus/cefbrowser-base:${TAG}-arm64v8 --build-arg ARCH=arm64v8/ .
-          docker push ghcr.io/Zabrimus/cefbrowser-base:${TAG}-arm64v8
+          docker build -t zabrimus/cefbrowser-base:${TAG}-arm64v8 --build-arg ARCH=arm64v8/ .
+          docker push ghcr.io/zabrimus/cefbrowser-base:${TAG}-arm64v8
           
-          docker manifest create ghcr.io/Zabrimus/cefbrowser-base:${TAG} \
-              --amend ghcr.io/Zabrimus/cefbrowser-base:${TAG}-amd64 \
-              --amend ghcr.io/Zabrimus/cefbrowser-base:${TAG}-arm32v7 \
-              --amend ghcr.io/Zabrimus/cefbrowser-base:${TAG}-arm64v8 
+          docker manifest create ghcr.io/zabrimus/cefbrowser-base:${TAG} \
+              --amend ghcr.io/zabrimus/cefbrowser-base:${TAG}-amd64 \
+              --amend ghcr.io/zabrimus/cefbrowser-base:${TAG}-arm32v7 \
+              --amend ghcr.io/zabrimus/cefbrowser-base:${TAG}-arm64v8 
 
-          docker manifest push ghcr.io/Zabrimus/cefbrowser-base:${TAG}
+          docker manifest push ghcr.io/zabrimus/cefbrowser-base:${TAG}
