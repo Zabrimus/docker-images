@@ -32,11 +32,3 @@ ENTRYPOINT ["/start.sh"]
 # or as root (e.g. in CoreELEC or LibreELEC)
 # docker run -it --rm -v .:/app -v /dev/shm:/dev/shm --ipc="host" --net=host <imagename> -ini sockets.ini
 
-# docker build -t cefbrowser/cefbrowser:1.0-amd64 --build-arg ARCH=amd64/ .
-# docker build -t cefbrowser/cefbrowser:1.0-arm32v7 --build-arg ARCH=arm32v7/ .
-# docker build -t cefbrowser/cefbrowser:1.0-arm64v8 --build-arg ARCH=arm64v8/ .
-
-# docker manifest create cefbrowser:1.0 \
-#    --amend cefbrowser/cefbrowser:1.0-amd64 \
-#    --amend cefbrowser/cefbrowser:1.0-arm32v7 \
-#    --amend cefbrowser/cefbrowser:1.0-arm64v8 \
