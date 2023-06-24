@@ -39,3 +39,18 @@ jobs:
           build-args: amd64
           tags: ghcr.io/zabrimus/${{ env.IMAGE_NAME }}:${{ env.TAG }}-amd64
 
+      - name: Build and push
+        uses: docker/build-push-action@v4
+        with:
+          context: "{{defaultContext}}:${{ env.IMAGE_NAME }}-docker"
+          push: true
+          build-args: arm32v7
+          tags: ghcr.io/zabrimus/${{ env.IMAGE_NAME }}:${{ env.TAG }}-arm32v7
+
+      - name: Build and push
+        uses: docker/build-push-action@v4
+        with:
+          context: "{{defaultContext}}:${{ env.IMAGE_NAME }}-docker"
+          push: true
+          build-args: arm64v8
+          tags: ghcr.io/zabrimus/${{ env.IMAGE_NAME }}:${{ env.TAG }}-arm64v8
