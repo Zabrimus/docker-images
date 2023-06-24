@@ -37,5 +37,5 @@ jobs:
           context: "{{defaultContext}}:${{ env.IMAGE_NAME }}-docker"
           push: true
           build-args: amd64
-          tags: ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:${{ env.TAG }}-amd64
+          tags: ghcr.io/zabrimus/${{ env.IMAGE_NAME }}:${{ env.TAG }}-amd64
 
