@@ -39,9 +39,9 @@ jobs:
           docker build -t Zabrimus/cefbrowser-base:${TAG}-arm64v8 --build-arg ARCH=arm64v8/ .
           docker push ghcr.io/Zabrimus/cefbrowser-base:${TAG}-arm64v8
           
-          docker manifest create Zabrimus/cefbrowser-base:${TAG} \
-              --amend Zabrimus/cefbrowser-base:${TAG}-amd64 \
-              --amend Zabrimus/cefbrowser-base:${TAG}-arm32v7 \
-              --amend Zabrimus/cefbrowser-base:${TAG}-arm64v8 
+          docker manifest create ghcr.io/Zabrimus/cefbrowser-base:${TAG} \
+              --amend ghcr.io/Zabrimus/cefbrowser-base:${TAG}-amd64 \
+              --amend ghcr.io/Zabrimus/cefbrowser-base:${TAG}-arm32v7 \
+              --amend ghcr.io/Zabrimus/cefbrowser-base:${TAG}-arm64v8 
 
-          docker manifest push Zabrimus/cefbrowser-base:${TAG}
+          docker manifest push ghcr.io/Zabrimus/cefbrowser-base:${TAG}
