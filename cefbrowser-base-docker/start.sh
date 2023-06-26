@@ -27,7 +27,7 @@ groupmod -g $USER_GID ${USER}
 usermod  -g $USER_ID  ${USER}
 
 if [ "${ASUSER}" = "true" ]; then
-  sudo -E -u ${USER}  LD_LIBRARY_PATH=/app ./cefbrowser --config=${INIFILE} --off-screen-rendering-enabled $ARGS
+  sudo -E -u ${USER}  LD_LIBRARY_PATH=/app ./cefbrowser --config=${INIFILE} --off-screen-rendering-enabled $ARGS &> browser.log
 else
-  LD_LIBRARY_PATH=/app ./cefbrowser --config=${INIFILE} --off-screen-rendering-enabled $ARGS
+  LD_LIBRARY_PATH=/app ./cefbrowser --config=${INIFILE} --off-screen-rendering-enabled $ARGS &> browser.log
 fi
