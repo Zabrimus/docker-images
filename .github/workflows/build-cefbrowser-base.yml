@@ -1,7 +1,7 @@
 name: Build cefbrowser base
 
 env:
-  TAG: "1.0"
+  TAG: "1.1"
   IMAGE_NAME: "cefbrowser-base"
 
 on:
@@ -37,4 +37,4 @@ jobs:
           context: "{{defaultContext}}:${{ env.IMAGE_NAME }}-docker"
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           push: true
-          tags: ghcr.io/zabrimus/${{ env.IMAGE_NAME }}:${{ env.TAG }}
+          tags: ghcr.io/zabrimus/${{ env.IMAGE_NAME }}:${{ env.TAG }},ghcr.io/zabrimus/${{ env.IMAGE_NAME }}:latest
