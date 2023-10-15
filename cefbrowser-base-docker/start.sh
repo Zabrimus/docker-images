@@ -19,7 +19,7 @@ USER_ID=${UID:=$USER_ID}
 USER_GID=${GID:=$USER_GID}
 
 if [ "${ASUSER}" = "true" ]; then
-  echo "sudo -E -u ${USER}  LD_LIBRARY_PATH=/app ./cefbrowser --config=${INIFILE} ${POSITIONAL_ARGS[@]} --off-screen-rendering-enabled --enable-features=UseOzonePlatform --ozone-platform=headless"
+  sudo -E -u ${USER}  LD_LIBRARY_PATH=/app ./cefbrowser --config=${INIFILE} ${POSITIONAL_ARGS[@]} --off-screen-rendering-enabled --enable-features=UseOzonePlatform --ozone-platform=headless
 else
-  echo "LD_LIBRARY_PATH=/app ./cefbrowser --config=${INIFILE} ${POSITIONAL_ARGS[@]} --off-screen-rendering-enabled --enable-features=UseOzonePlatform --ozone-platform=headless"
+  LD_LIBRARY_PATH=/app ./cefbrowser --config=${INIFILE} ${POSITIONAL_ARGS[@]} --off-screen-rendering-enabled --enable-features=UseOzonePlatform --ozone-platform=headless
 fi
