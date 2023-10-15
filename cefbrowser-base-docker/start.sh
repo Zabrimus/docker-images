@@ -1,5 +1,7 @@
 #!/bin/bash
 
+POSITIONAL_ARGS=()
+
 ASUSER=false
 INIFILE=sockets.ini
 
@@ -7,27 +9,17 @@ while [ "$#" -gt 0 ]; do
   case $1 in
     -user) shift ; ASUSER=true;;
     -ini) shift ; INIFILE=$1; shift;;
-    --) shift; break;;
-    *) exit 1 # should never be reached.
+    *)  POSITIONAL_ARGS+=("$1") # save positional arg
+        shift # past argument
+        ;;
   esac
 done
-
-if [ "$#" -eq 0 ]; then
-    # set default parameter
-    ARGS="--enable-features=UseOzonePlatform --ozone-platform=headless"
-else
-    ARGS="$*"
-fi
 
 USER_ID=${UID:=$USER_ID}
 USER_GID=${GID:=$USER_GID}
 
-usermod  -u $USER_ID  ${USER}
-groupmod -g $USER_GID ${USER}
-usermod  -g $USER_ID  ${USER}
-
 if [ "${ASUSER}" = "true" ]; then
-  sudo -E -u ${USER}  LD_LIBRARY_PATH=/app ./cefbrowser --config=${INIFILE} --off-screen-rendering-enabled $ARGS &> browser.log
+  echo "sudo -E -u ${USER}  LD_LIBRARY_PATH=/app ./cefbrowser --config=${INIFILE} ${POSITIONAL_ARGS[@]} --off-screen-rendering-enabled --enable-features=UseOzonePlatform --ozone-platform=headless"
 else
-  LD_LIBRARY_PATH=/app ./cefbrowser --config=${INIFILE} --off-screen-rendering-enabled $ARGS &> browser.log
+  echo "LD_LIBRARY_PATH=/app ./cefbrowser --config=${INIFILE} ${POSITIONAL_ARGS[@]} --off-screen-rendering-enabled --enable-features=UseOzonePlatform --ozone-platform=headless"
 fi
