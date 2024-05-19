@@ -5,8 +5,8 @@ ENV USER=browser USER_ID=1000 USER_GID=1000
 
 RUN apt update && \
     apt -y install libssl3 libglib2.0-0 libnss3 libatk1.0-0 libatk-bridge2.0-0 libcups2 libxcomposite1 \
-                libxdamage1 libxrandr2 libgbm1 libxkbcommon0 libpango1.0-0 libasound2 \
-                libfmt9 libxfixes3 libegl1-mesa libpci3 bash sudo && \
+                libxdamage1 libxrandr2 libgbm1 libxkbcommon0 libpango-1.0-0 libasound2 \
+                libfmt9 libxfixes3 libegl-mesa0 libpci3 bash sudo && \
     apt clean && apt -y autoremove && rm -rf /var/lib/apt/lists/*
 
 RUN groupadd --gid "${USER_GID}" "${USER}" && \
