@@ -1,4 +1,4 @@
-name: Build cefbrowser base
+name: CE20 Build cefbrowser base
 
 env:
   TAG: "1.2"
