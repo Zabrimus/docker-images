@@ -2,7 +2,7 @@ name: CE21 Build cefbrowser armv7 base
 
 env:
   TAG: "1.2"
-  IMAGE_NAME: "cefbrowser-base-armv7-ce21"
+  IMAGE_NAME: "cefbrowser-base-ce21-armv7"
 
 on:
   workflow_dispatch
