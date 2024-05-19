@@ -1,8 +1,8 @@
-name: CE21 Build cefbrowser base
+name: CE21 Build cefbrowser armv7 base
 
 env:
   TAG: "1.2"
-  IMAGE_NAME: "cefbrowser-base-ce21"
+  IMAGE_NAME: "cefbrowser-base-armv7-ce21"
 
 on:
   workflow_dispatch
@@ -35,6 +35,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: "{{defaultContext}}:${{ env.IMAGE_NAME }}-docker"
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/arm/v7
           push: true
           tags: ghcr.io/zabrimus/${{ env.IMAGE_NAME }}:${{ env.TAG }},ghcr.io/zabrimus/${{ env.IMAGE_NAME }}:latest
