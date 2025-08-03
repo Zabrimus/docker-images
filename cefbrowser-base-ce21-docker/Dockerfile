@@ -1,5 +1,5 @@
 ARG ARCH=
-FROM ${ARCH}debian:bookworm-slim
+FROM ${ARCH}debian:trixie-slim
 
 ENV USER=browser USER_ID=1000 USER_GID=1000
 
