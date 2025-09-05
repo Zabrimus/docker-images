@@ -33,6 +33,11 @@ jobs:
       - name: Patch Docker files
         run: |
           cd coreelec 
+          pwd
+          echo "......"
+          ls -la ..
+          echo "."
+          ls -la
           patch -p1 < ../docker-patches/add-wget.patch
 
       - name: CoreELEC/LibreELEC.tv Jammy
