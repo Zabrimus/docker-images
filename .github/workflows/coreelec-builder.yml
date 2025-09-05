@@ -43,9 +43,8 @@ jobs:
       - name: List
         run: |
             ls -la .
-            ls -la docker-images
-            ls -la docker-images/docker-images/coreelec
-            ls -la docker-images/docker-images/libreelec
+            ls -la coreelec
+            ls -la libreelec
 
       #- name: Build and push
       #  uses: docker/build-push-action@v4
