@@ -1,4 +1,4 @@
-name: CE21 Build cefbrowser base
+name: CoreELEC/LibreELEC Docker Build Images
 
 env:
   TAG: "1.2"
