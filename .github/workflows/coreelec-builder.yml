@@ -40,14 +40,9 @@ jobs:
           repository:  LibreELEC/LibreELEC.tv
           path: libreelec
 
-      - name: List
-        run: |
-          ls -la .
-          ls -la coreelec
-
       - name: CoreELEC
         uses: docker/build-push-action@v6
         with:
-          context: "{{defaultContext}}:corelec/CoreELEC/tools/docker/jammy"
+          context: "{{defaultContext}}:corelec/tools/docker/jammy"
           push: true
           tags: coreelec-builder/jammy:latest
