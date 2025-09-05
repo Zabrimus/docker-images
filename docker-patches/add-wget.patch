@@ -1,0 +1,39 @@
+diff --git a/tools/docker/jammy/Dockerfile b/tools/docker/jammy/Dockerfile
+index 74413b697d..b42acda4b5 100644
+--- a/tools/docker/jammy/Dockerfile
++++ b/tools/docker/jammy/Dockerfile
+@@ -21,7 +21,7 @@ RUN apt-get update \
+     curl bash bc gcc-12 sed patch patchutils tar bzip2 gzip xz-utils zstd perl gawk gperf zip \
+       unzip diffutils lzop make file g++-12 xfonts-utils xsltproc default-jre-headless python3 \
+       libc6-dev libncurses5-dev libjson-perl libxml-parser-perl libparse-yapp-perl rdfind \
+-      golang-1.23-go git openssh-client rsync upx-ucl \
++      golang-1.23-go git openssh-client rsync upx-ucl wget \
+     --no-install-recommends \
+     && ln -s /usr/lib/go-1.23 /usr/lib/go \
+     && ln -s /usr/lib/go-1.23/bin/go /usr/bin/go \
+diff --git a/tools/docker/noble/Dockerfile b/tools/docker/noble/Dockerfile
+index c36f908e21..3d1f9987d0 100644
+--- a/tools/docker/noble/Dockerfile
++++ b/tools/docker/noble/Dockerfile
+@@ -20,7 +20,7 @@ RUN apt-get update \
+     curl bash bc gcc-14 cpp-14 sed patch patchutils tar bzip2 gzip xz-utils zstd perl gawk gperf zip \
+       unzip diffutils lzop make file g++-14 xfonts-utils xsltproc default-jre-headless python3 \
+       libc6-dev libncurses5-dev libjson-perl libxml-parser-perl libparse-yapp-perl rdfind \
+-      golang-1.23-go git openssh-client rsync upx-ucl \
++      golang-1.23-go git openssh-client rsync upx-ucl wget \
+     --no-install-recommends \
+     && ln -s /usr/lib/go-1.23 /usr/lib/go \
+     && ln -s /usr/lib/go-1.23/bin/go /usr/bin/go \
+diff --git a/tools/docker/plucky/Dockerfile b/tools/docker/plucky/Dockerfile
+index ec5f34d6f3..038b2482ef 100644
+--- a/tools/docker/plucky/Dockerfile
++++ b/tools/docker/plucky/Dockerfile
+@@ -21,7 +21,7 @@ RUN apt-get install -y \
+     curl bash bc gcc-15 cpp-15 sed patch patchutils tar bzip2 gzip xz-utils zstd perl gawk gperf zip \
+       unzip diffutils lzop make file g++-15 xfonts-utils xsltproc default-jre-headless python3 \
+       libc6-dev libncurses5-dev libjson-perl libxml-parser-perl libparse-yapp-perl rdfind \
+-      golang-1.24-go git openssh-client rsync upx-ucl \
++      golang-1.24-go git openssh-client rsync upx-ucl wget \
+     --no-install-recommends \
+     && ln -s /usr/lib/go-1.24 /usr/lib/go \
+     && ln -s /usr/lib/go-1.24/bin/go /usr/bin/go \
