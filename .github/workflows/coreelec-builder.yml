@@ -43,3 +43,11 @@ jobs:
           file: "corelec/tools/docker/jammy/Dockerfile"
           push: true
           tags: coreelec-builder/jammy:latest
+
+      - name: CoreELEC2
+        uses: docker/build-push-action@v6
+        with:
+          context: ./coreelec/tools/docker/jammy
+          push: true
+          tags: coreelec-builder/jammy:latest
+
