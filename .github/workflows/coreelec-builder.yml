@@ -1,9 +1,5 @@
 name: CoreELEC/LibreELEC Docker Build Images
 
-env:
-  TAG: "1.2"
-  IMAGE_NAME: "cefbrowser-base-ce21"
-
 on:
   workflow_dispatch
 
@@ -43,7 +39,7 @@ jobs:
       - name: CoreELEC
         uses: docker/build-push-action@v6
         with:
-          context: .
+          context: ./coreelec/tools/docker/jammy
           file: "corelec/tools/docker/jammy/Dockerfile"
           push: true
           tags: coreelec-builder/jammy:latest
