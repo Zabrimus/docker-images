@@ -50,4 +50,4 @@ jobs:
           context: ./coreelec/tools/docker/plucky
           push: true
           tags: ce-le-builder/25.04:latest
-s
+
