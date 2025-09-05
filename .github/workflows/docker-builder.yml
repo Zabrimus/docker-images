@@ -35,19 +35,19 @@ jobs:
         with:
           context: ./coreelec/tools/docker/jammy
           push: true
-          tags: ce-le-builder/22.04:latest
+          tags: ghcr.io/zabrimus/ce-le-builder/22.04:latest
 
       - name: CoreELEC/LibreELEC.tv Noble
         uses: docker/build-push-action@v6
         with:
           context: ./coreelec/tools/docker/noble
           push: true
-          tags: ce-le-builder/24.04:latest
+          tags: ghcr.io/zabrimus/ce-le-builder/24.04:latest
 
       - name: CoreELEC/LibreELEC.tv Plucky
         uses: docker/build-push-action@v6
         with:
           context: ./coreelec/tools/docker/plucky
           push: true
-          tags: ce-le-builder/25.04:latest
+          tags: ghcr.io/zabrimus/ce-le-builder/25.04:latest
 
