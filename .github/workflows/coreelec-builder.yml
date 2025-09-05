@@ -40,6 +40,11 @@ jobs:
           repository:  LibreELEC/LibreELEC.tv
           path: libreelec
 
+      - name: List
+        run: |
+          ls -la .
+          ls -la coreelec
+
       - name: CoreELEC
         uses: docker/build-push-action@v6
         with:
