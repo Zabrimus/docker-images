@@ -33,7 +33,7 @@ jobs:
       - name: Patch Docker files
         run: |
           cd coreelec 
-          patch -p1 < docker-patches/add-wget.patch
+          patch -p1 < ../docker-patches/add-wget.patch
 
       - name: CoreELEC/LibreELEC.tv Jammy
         uses: docker/build-push-action@v6
