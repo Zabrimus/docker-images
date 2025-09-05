@@ -43,6 +43,6 @@ jobs:
       - name: CoreELEC
         uses: docker/build-push-action@v6
         with:
-          context: "{{defaultContext}}:corelec/tools/docker/jammy"
+          context: "corelec/tools/docker/jammy"
           push: true
           tags: coreelec-builder/jammy:latest
